@@ -1,0 +1,15 @@
+docker network create my-network2
+
+docker network ls
+
+docker run --name apache1 -d -p 80:80 --network my-network2 httpd
+
+docker ps
+
+docker run -it --network my_network --rm mysql:latest mysql -hmy_mysql_container -umyuser -pmypassword mydatabase
+
+docker run --name my_phpmyadmin_container --network my_network -e PMA_HOST=my_mysql_container -e PMA_USER=myuser -e PMA_PASSWORD=mypassword -p 8080:80 -d phpmyadmin/phpmyadmin
+
+
+
+
